@@ -1,9 +1,9 @@
 camera_id,slice_type,frames,risk,rationale
-front,normal,,TODO,TODO
-front,hard,,TODO,TODO
-rear,normal,,TODO,TODO
-rear,hard,,TODO,TODO
-left,normal,,TODO,TODO
-left,hard,,TODO,TODO
-right,normal,,TODO,TODO
-right,hard,,TODO,TODO
+front,normal,25,medium,"Đường thoáng ban ngày, ít vật; giữ để đo nền và bắt lỗi kích thước box ở vùng center/mid"
+front,hard,35,high,"Camera trước quyết định phanh/tránh; dồn frame cho xe máy cắt ngang gần, người đi bộ sát rìa vòng kính, ngược sáng và mưa"
+rear,normal,20,medium,"Cảnh lùi tốc độ thấp, vật to và gần; cần ít frame hơn để ổn định rule"
+rear,hard,30,high,"Lùi ban đêm, đèn pha xe sau chói, người/xe đạp xuất hiện sát đuôi xe và bị ego_body che một phần"
+left,normal,20,medium,"Vật chủ yếu đi song song, dễ nhãn; đủ để kiểm rider và truncated ở rìa"
+left,hard,25,high,"Xe máy vượt sát hông, vật lọt vào seam với camera trước/sau, méo mạnh ở mép vòng"
+right,normal,20,medium,"Đối xứng với left, giữ số bằng nhau để so lệch giữa hai hông"
+right,hard,25,high,"Lề đường bên phải nhiều vật tĩnh (xe đỗ, gian hàng, người đứng) chen với vật động; hay sai class và duplicate"

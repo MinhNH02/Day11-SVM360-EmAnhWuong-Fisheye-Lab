@@ -1,0 +1,24 @@
+{
+  "members": [
+    "minh",
+    "theanh",
+    "tuan"
+  ],
+  "assignments": {
+    "minh": "B4-edge",
+    "theanh": "B2-mid",
+    "tuan": "B4-center"
+  },
+  "self": "minh",
+  "slice": "B4-edge",
+  "degrade": [],
+  "current_slice": "B4-edge",
+  "support_prefill": false,
+  "support_slice": "",
+  "prefill_box_ids": [
+    "adasind_236370.jpg:1",
+    "adasind_236370.jpg:2",
+    "adasind_236370.jpg:3",
+    "adasind_236370.jpg:4"
+  ]
+}

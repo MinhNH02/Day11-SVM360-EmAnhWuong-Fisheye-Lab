@@ -1,6 +1,5 @@
 # Sensor context
 
-- TODO — Rig: mô tả ngắn xe/camera gắn ở đâu theo hiểu biết của bạn từ ảnh (ADASIND không kèm tài liệu rig chi
-  tiết, ghi theo quan sát).
-- TODO — `ego_body` nhìn thấy ở đâu trong frame (góc capo, gương, tay lái...).
-- TODO — Vòng kính (lens circle) nằm ở vị trí nào trong ảnh, chiếm khoảng bao nhiêu phần khung hình.
+- Rig: Nhìn từ 48 frame ADASIND thì đây là một camera fisheye đơn, gắn thấp ở phía trước xe, hướng thẳng về phía trước và hơi chúc xuống, xe chạy bên trái đường (giao thông kiểu Ấn Độ). Khung hình dọc 1080×1920. Ở nhiều frame thấy bóng người lái và một mảng thân xe tối ở góc dưới bên trái, nên tôi đoán camera đặt ở đầu xe hai bánh hoặc xe nhỏ, cao chừng ngang tay lái. ADASIND không kèm tài liệu rig, không có thông số tiêu cự hay calibration, nên mọi thứ ở đây là suy đoán từ ảnh; đây là dữ liệu một camera, không phải bốn camera quanh xe như đề bài SVM.
+- `ego_body`: Chỉ thấy ở một số frame, dưới dạng mảng đen kéo từ mép trái xuống góc dưới trái (ví dụ adasind_019560: khoảng x 0–60, y 1080–1350), đôi khi kèm bóng người lái đổ trên mặt đường ở đáy khung. Frame adasind_006840 và adasind_271039 không thấy thân xe, chỉ có mặt đường, nên không vẽ `ego_body` ở đó. Không thấy capo, gương hay tay lái rõ ràng trong khung.
+- Vòng kính: Vòng tròn sáng nằm gần giữa khung, tâm lệch xuống dưới một chút (theo `assets/frames.csv` tâm khoảng x 420–670, y 890–1080, bán kính 770–840 px). Đường kính vòng cỡ 1550–1680 px, tức chiếm gần hết chiều cao 1920 và tràn ra ngoài hai mép trái/phải của khung 1080, nên hai bên vòng bị cắt thẳng bởi biên ảnh. Phần ngoài vòng là viền đen, đã có sẵn polygon `lens_border` trong prefill; vật ở sát vòng bị méo mạnh và hay bị vòng cắt ngang.

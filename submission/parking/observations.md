@@ -1,6 +1,6 @@
 # Quan sát vạch ô đỗ
 
-- Hai vạch `parking_line` đã vẽ (mô tả vị trí trong ảnh): TODO
-- Một vạch/dấu sơn hoặc biên **không** vẽ, và vì sao: TODO
-- Polygon `free_space` dừng ở đâu; có phần bị che nào không: TODO
-- Ca chưa chắc cần hỏi người soát (nếu không có, ghi “không có”): TODO
+- Hai vạch `parking_line` đã vẽ (mô tả vị trí trong ảnh): Vạch 1 là vạch chéo to ở giữa phía dưới ảnh, chạy từ khoảng (404,651) xuống sát mép dưới (529,716). Vạch 2 là vạch chéo bên phải, từ (697,622) ra tới mép phải ảnh (956,683). Đây là hai vạch rõ nhất của hàng ô gần camera, cùng hướng nghiêng, mỗi vạch ngăn hai ô cạnh nhau. Tôi vẽ thêm 8 vạch nữa cho đủ hàng: hai mẩu vạch bị cắt ở góc trái dưới và mép phải, cộng 6 vạch của hàng ô giữa (từ (63,500)→(47,571) sang tới (726,516)→(806,528)). Tất cả đều dừng ở chỗ hết sơn hoặc chạm biên ảnh, không kéo dài thêm.
+- Một vạch/dấu sơn hoặc biên **không** vẽ, và vì sao: Bỏ hai đường mờ gần nằm ngang ở y≈470 và y≈520 chạy suốt chiều ngang ảnh. Nhìn kỹ thì đó là mép hàng ô (đường đầu ô), chứ không phải vạch ngăn giữa hai ô, nên không tính là `parking_line`. Cũng bỏ dải vàng dưới chân hàng rào phía xa vì là lề đường.
+- Polygon `free_space` dừng ở đâu; có phần bị che nào không: Khoanh dải nhựa đường trống giữa hàng ô giữa và hàng ô gần, tức lối xe chạy. Cạnh trên bám ngay dưới đuôi các vạch hàng giữa (y≈547–580), cạnh dưới bám ngay trên đầu các vạch hàng gần (y≈589–679), hai bên kéo tới biên ảnh. Không đè lên vạch nào, không dính xe đỏ (xe ở tít phía trên, y≈470), không dính hàng rào hay cây. Cả vùng nhìn thấy rõ, không có chỗ bị che.
+- Ca chưa chắc cần hỏi người soát (nếu không có, ghi “không có”): Hai hàng ô xa nhất cạnh xe đỏ (y≈480–510) còn nhiều vạch ngắn 10–25 px rất mờ, tôi chưa vẽ vì không chắc bám đúng sơn — cần chốt có phải vẽ ở cỡ này không. Ngoài ra đường ngang y≈520 có thể tính là vạch đầu ô; tôi đang xem nó là biên lối đi. Ảnh này không có calibration nên `free_space` chỉ là vùng trống nhìn thấy, chưa nói được xe đi qua có an toàn không.

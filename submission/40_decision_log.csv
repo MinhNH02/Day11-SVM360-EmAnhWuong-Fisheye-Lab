@@ -1,1 +1,8 @@
 id,date,question,decision,rationale,status
+D1,2026-09-29,"Frame 236370: L2 và L3 có phải hai xe khác nhau?","Gộp thành một box Bike (595,830)-(885,1018)","QA của B chỉ ra L3 ôm lệch; reference R4 và model M1 đều có một Bike vùng này; phóng to thấy một xe máy duy nhất (E1, R02)",done
+D2,2026-09-29,"Frame 258420: xe con trắng R5 (42 px) và người R7 (51 px) có trong phạm vi không?","Thêm box Car và Pedestrian ở bản v2","Cả hai cao trên ngưỡng H=40; A ước lượng nhầm là dưới ngưỡng (E1, R01)",done
+D3,2026-09-29,"Frame 258420: box L2 Truck mà reference không có có phải thừa?","Giữ box, ghi keep_with_reason","Phóng to thấy rõ đuôi xe tải thùng tối màu cao 66 px; reference và model cùng bỏ sót (E0). Class Truck/Bus còn chờ xem frame liền kề",done
+D4,2026-09-29,"Frame 236370: người đứng cầm ghi đông xe máy (L1) là Pedestrian riêng hay thuộc Bike?","Chuyển guideline, đề xuất R03a trong 20_guideline_patch.md","A và B đọc là người dắt; reference gộp như rider; R03 không phủ ca đứng chân chạm đất (E2)",escalated
+D5,2026-09-29,"Model gán xe ba bánh thành Truck/Car/Bus có phải lỗi nhãn?","Escalate cho ai_team, giữ nhãn L/R","5/5 xe ba bánh trong slice đều sai cùng kiểu, nhãn L và R khớp nhau (E4)",escalated
+D6,2026-09-29,"Frame 310008: đáy box L3 kéo xuống bóng dưới chân (QA của B)","Kéo đáy box lên y 1024 ở bản v2","Sai nhỏ hình học theo R02, không đổi class; sửa luôn vì đang mở task",done
+D7,2026-09-29,"Frame 236370: cậu bé L4 có dắt thêm một xe đạp riêng không (QA của B)?","Chưa thêm box, giữ trạng thái mở","Box Bike gộp mới đã phủ vùng bánh xe; reference và model không có xe đạp thứ hai; cần xem frame liền kề để chắc (E5)",open
